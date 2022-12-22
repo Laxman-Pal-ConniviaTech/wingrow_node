@@ -115,7 +115,7 @@ export default function Register() {
             theme: "light",
           });
           setTimeout(() => {
-            navigate("/login");
+            navigate("/registeration-successfull");
             window.location.reload();
           }, 1000);
           // navigate('/login')

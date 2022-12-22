@@ -67,20 +67,24 @@ class App extends React.Component {
 
    render(){
     return(
-      <div>
+      <div className="forgot-main-container">
         {/* Login */}
-        <h2>Login Form</h2>
+        <div className="forgot-form-outer">
+        <div className="forgot-form-inner">
+        <img className="form-logo" src="./logo.png" alt="form-logo" />
+        <h3>Please verify your mobile number</h3>
         <form onSubmit={this.onSignInSubmit}>
           <div id="sign-in-button"></div>
-          <input type="number" name="mobile" placeholder="Mobile Number" required onChange={this.handleChange}/>
-          <button type="submit">Submit</button>
+        <input className="forgot-input" type="number" name="mobile" placeholder="Mobile Number" required onChange={this.handleChange}/>
+          <button className="forgot-btn" type="submit">Submit</button>
         </form>
         {/* OTP */}
-        <h2>Enter OTP</h2>
         <form onSubmit={this.onSubmitOTP}>
-          <input type="number" name="otp" placeholder="OTP Number" required onChange={this.handleChange}/>
-          <button type="submit">Submit</button>
+          <input className="forgot-input" type="number" name="otp" placeholder="OTP Number" required onChange={this.handleChange}/>
+          <button className="forgot-btn" type="submit">Submit</button>
         </form>
+        </div>
+        </div>
       </div>
     )
   }

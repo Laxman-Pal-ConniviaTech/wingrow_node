@@ -41,7 +41,7 @@ const AdminHome = ({
       if (farmersData.has(e.farmertype)) {
         farmersData.set(e.farmertype, farmersData.get(e.farmertype) + 1);
       } else {
-        farmersData.set(e.farmertype, 0);
+        farmersData.set(e.farmertype, 1);
       }
     });
 

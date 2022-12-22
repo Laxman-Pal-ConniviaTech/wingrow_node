@@ -47,6 +47,7 @@ function Test({ setbookingDetails , setValue }) {
     handleOpen(true);
   }, []);
 
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -191,6 +192,7 @@ function Test({ setbookingDetails , setValue }) {
   };
 
   const handleClick = (ev) => {
+  
     if (numberOfSeats && ev.target.className !== "booked") {
       const seatsToBook = parseInt(numberOfSeats, 20);
       if (bookedStalls.length <= seatsToBook) {
@@ -209,6 +211,8 @@ function Test({ setbookingDetails , setValue }) {
         }
       }
     }
+    //console.log(bookedStalls.map(function(v,i){return v.stallPrice}));
+    
   };
 
   const lengthofUpdatedData = UpdatedData?.length;
@@ -403,7 +407,10 @@ function Test({ setbookingDetails , setValue }) {
                 <Divider className="divider" />
                 <div className="stall-total-amount-holder">
                   <div className="total-amount">Total Amount</div>
-                  <div className="total-amount">Rs.000/-</div>
+                  <div className="total-amount">Rs.{bookedStalls.reduce(
+      (total, item) => item.stallPrice + total,
+      0
+    )}/-</div>
                 </div>
               </Grid>
             </Grid>
