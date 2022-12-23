@@ -57,13 +57,20 @@ const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("user"));
 };
 
+const feedback = (message) => {
+  return axios.post(API_URL + "feedback", {
+    message
+  });
+};
+
 const AuthService = {
   register,
   login,
   logout,
   getCurrentUser,
   addAddress,
-  addimage
+  addimage,
+  feedback
 };
 
 export default AuthService;

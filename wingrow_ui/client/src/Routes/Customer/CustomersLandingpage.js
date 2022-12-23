@@ -6,6 +6,7 @@ import { Divider } from "@mui/material";
 import ProductCategory from "./ProductCategory";
 import OffersCarousel from "./OffersCarousel";
 import BannerCarousel from "./BannerCarousel";
+import Feedback from "./Feedback";
 
 const CustomersLandingpage = () => {
   return (
@@ -121,6 +122,12 @@ const CustomersLandingpage = () => {
       </div>
       <div className="banner-carousel-container">
         <BannerCarousel/>
+      </div>
+      <Divider className="divider" textAlign="left">
+        Feedback
+      </Divider>
+      <div className="feedback-container">
+      <Feedback/>
       </div>
     </div>
   );

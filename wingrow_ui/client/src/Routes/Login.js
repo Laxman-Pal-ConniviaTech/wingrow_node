@@ -191,7 +191,7 @@ export default function SignIn() {
               className="textfield"
               onChange={handleChange}
             />
-            <Link className="form-link" to={"/forgot"} variant="body2">
+            <Link className="form-link" to={"/Forgot"} variant="body2">
               Forgot your password?
             </Link>
             <Button

@@ -3,6 +3,7 @@ const User = require('../models/User')
 var jwt = require("jsonwebtoken");
 const config =require('../config/auth.config')
 const jwt_decode =  require("jwt-decode");
+const Feedback = require("../models/Feedback");
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({ 
@@ -141,3 +142,67 @@ exports.signin = (req, res) => {
     res.status(500).send("Server Error");
     }
   }
+
+
+  exports.resetPassword = async(req,res) => {
+    const {newpassword , phone} = req.body
+    try {
+      let token = req.headers["x-access-token"];
+      const { id } = jwt_decode(token)
+
+      if (!newpassword) {
+        res.json({
+          success: false,
+          message: "Please provide valid password"
+        });
+      } else {
+
+        const data = await User.find({_phone: phone})
+        if(data){
+          res.status(200).json(data)
+        }
+        else{
+          res.status(400).json("something went wrong")
+        }
+      }
+    } catch (error) {
+      console.error(error);
+    res.status(500).send("Server Error");
+    }
+  }
+
+
+
+
+exports.feedback=async(req,res)=>{
+  const {  message , stars} = req.body;
+  const feedback = new Feedback({
+    stars,
+    message
+  })
+  const data = await feedback.save()
+  res.status(200).send(feedback);
+}
+ /* exports.feedback = async(req , res )=>{
+    
+      const {  message} = req.body;
+    
+      const feedback = new Feedback({
+        message
+      })
+      console.log(feedback);
+      const data = await feedback.save()
+      console.log(data);
+      // try {
+      //   const data = await user.save();
+      //   console.log(data);
+      // } catch (error) {
+      //   console.error(error);
+      // }
+    
+      if(!data){
+        res.status(400).send("feedback failed")
+      }
+      console.log(data);
+      res.status(200).send(data)
+}*/

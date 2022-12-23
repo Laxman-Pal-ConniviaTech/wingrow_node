@@ -16,8 +16,9 @@ const Farmer = lazy(()=> import('./Routes/Farmer/Farmer'))
 const Admin = lazy(()=> import('./Routes/Admin/Admin'))
 const user = AuthService.getCurrentUser();
 const Forgot = lazy(()=> import("./Routes/Forgot"))
-const NewPassword = lazy(()=> import ("./Routes/NewPassword"))
-const RegisterSucces = lazy(()=> import ("./Routes/RegisterSucces"))
+const NewPassword = lazy (()=> import("./Routes/NewPassword"))
+const ResetPasswordSuccessful = lazy(()=> import("./Routes/ResetPasswordSuccessful"))
+const RegisterSucces = lazy(()=>import("./Routes/RegisterSucces"))
 
 const App = () => {
   return (
@@ -66,8 +67,9 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/registeration-successfull' element={<RegisterSucces/>}/>
-          <Route path='/forgot' element={<Forgot/>}/>
+          <Route path='/Forgot' element={<Forgot/>}/>
           <Route path='/newpassword' element={<NewPassword/>}/>
+          <Route path='/ResetPasswordSuccessful' element={<ResetPasswordSuccessful/>}/>
           <Route path='/terms' element={<Terms/>}/>
       </Route>
       <Route path="*" element={<NotFound/>} />
