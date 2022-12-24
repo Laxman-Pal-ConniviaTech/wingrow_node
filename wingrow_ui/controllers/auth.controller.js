@@ -95,6 +95,47 @@ exports.signin = (req, res) => {
   };
   
 
+  exports.resetpassword = (req, res) => {
+    const {phone , password} = req.body
+    User.findOne({
+      phone: phone
+    })
+      .exec((err, user) => {
+        if (err) {
+          res.status(500).send({ message: err });
+          return;
+        }
+  
+        if (!user) {
+          return res.status(404).send({ message: "User Not found." });
+        }
+  
+        const newpassword =User.updateOne({
+          password:bcrypt.hashSync(password, 8),
+        })
+
+
+        const data =newpassword.save()
+        console.log(data);
+        // try {
+        //   const data = await user.save();
+        //   console.log(data);
+        // } catch (error) {
+        //   console.error(error);
+        // }
+      
+        if(!data){
+          res.status(400).send("registration failed")
+        }
+  
+        res.status(200).send(data)
+
+
+
+      });
+  };
+
+
   exports.postPic = async(req,res) => {
     let token = req.headers["x-access-token"];
     const { id } = jwt_decode(token)

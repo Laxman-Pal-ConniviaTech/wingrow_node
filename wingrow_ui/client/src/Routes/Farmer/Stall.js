@@ -14,19 +14,28 @@ const Stall = ({ data, handleClick, bookedStalls, alreadyBooked, date }) => {
           let stallClass;
           if (isBooked) {
             stallClass = "booked";
-          } else {
+          } else if (stallPrice === 100){
+            stallClass = "hundred";
+          } else if (stallPrice === 300){
+            stallClass = "three-hundred";
+          }
+          else if (stallPrice === 500){
+            stallClass = "five-hundred";
+          }else {
             stallClass = "available";
           }
-
+          
           if (isSelected && !isBooked) {
             stallClass = "selected";
           }
 
           return (
-            <div onClick={handleClick} className={stallClass} id={_id} key={i}>
-              {stallName}
-              <br />
-              Rs.{stallPrice}
+            <div className={stallClass}>
+              <div onClick={handleClick} id={_id} key={i}>
+                {stallName}
+                <br />
+                Rs.{stallPrice}
+              </div>
             </div>
           );
         })}

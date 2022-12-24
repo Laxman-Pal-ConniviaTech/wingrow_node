@@ -23,19 +23,19 @@ const FarmerNav = () => {
             src="https://cdn-icons-png.flaticon.com/512/2989/2989988.png"
             alt="logo"
           />
-          <Link className="links_farmersdata" to="/farmers">
+          <Link className="links_farmersdata red" to="/farmers">
             Book Stall
           </Link>
-          <Link className="links_farmersdata" to="./mybookings">
+          <Link className="links_farmersdata green" to="./mybookings">
             My Bookings
           </Link>
-          <Link className="links_farmersdata" to="./inward">
+          <Link className="links_farmersdata red" to="./inward">
             Fill Inward
           </Link>
-          <Link className="links_farmersdata" to="./outward">
+          <Link className="links_farmersdata green" to="./outward">
             Fill Outward
           </Link>
-          <Link className="links_farmersdata" to="./farmershome">
+          <Link className="links_farmersdata red" to="./farmershome">
             Data
           </Link>
         </div>

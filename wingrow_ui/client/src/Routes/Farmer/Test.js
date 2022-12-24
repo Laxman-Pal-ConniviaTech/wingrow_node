@@ -259,6 +259,7 @@ function Test({ setbookingDetails , setValue }) {
                   }}
                   name="number-of-stalls-req"
                   required
+                  placeholder="00"
                   fullWidth
                   type="number"
                   id="number-of-stalls-req"
@@ -268,6 +269,9 @@ function Test({ setbookingDetails , setValue }) {
                   onChange={handleChange}
                 />
               </Grid>
+            </Grid>
+            <Grid className="advance-booking">
+            <Link to="../advancebookings" className='advancebookinglink'>Advance booking !</Link>
             </Grid>
             <Grid className="stall-position-grid">
               <InputLabel className="stall-booking-lable">
@@ -364,7 +368,7 @@ function Test({ setbookingDetails , setValue }) {
                       sx={{
                         width: 20,
                         height: 20,
-                        backgroundColor: "#ade792",
+                        backgroundColor: "#AACE48",
                       }}
                       className="stall-color"
                     />
@@ -375,7 +379,7 @@ function Test({ setbookingDetails , setValue }) {
                       sx={{
                         width: 20,
                         height: 20,
-                        backgroundColor: "#54b435",
+                        backgroundColor: "#3AA54B",
                       }}
                       className="stall-color"
                     />
@@ -386,7 +390,7 @@ function Test({ setbookingDetails , setValue }) {
                       sx={{
                         width: 20,
                         height: 20,
-                        backgroundColor: "#ff6464",
+                        backgroundColor: "#A42A56",
                       }}
                       className="stall-color"
                     />
@@ -397,7 +401,7 @@ function Test({ setbookingDetails , setValue }) {
                       sx={{
                         width: 20,
                         height: 20,
-                        backgroundColor: "#bad1c2",
+                        backgroundColor: "#B3B3B3",
                       }}
                       className="stall-color"
                     />
@@ -415,7 +419,7 @@ function Test({ setbookingDetails , setValue }) {
               </Grid>
             </Grid>
             {numberOfSeats !== 0 && bookedStalls.length !== 0 ? (
-              <div className="modal_btn">
+              <div className="modalbtn">
                 <ConfirmModal confirmBooking={confirmBooking} />
               </div>
             ) : (

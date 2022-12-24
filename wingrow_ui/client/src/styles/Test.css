@@ -59,7 +59,7 @@
 }
 
 .booked {
-  background-color: rgb(176, 170, 170);
+  background-color: #B3B3B3;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -67,6 +67,7 @@
   width: 100px;
   height: 50px;
   margin: 10px;
+  color: #fff;
   cursor: not-allowed;
   display: flex;
   flex-direction: column;
@@ -77,12 +78,13 @@
   letter-spacing: 1px;
 }
 
-.available {
-  background-color: rgb(171, 213, 166);
+
+.hundred {
+  background: #AACE48;
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
-    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   width: 100px;
   height: 50px;
   margin: 10px;
@@ -94,15 +96,62 @@
   font-size: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 1px;
+  color: #fff;
+}
+
+.three-hundred {
+  background: #3AA54B;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+
+
+.five-hundred {
+  background: #A42A56;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
 }
 
 .advancebookinglink {
-  display: inline-block;
+  /* display: inline-block;
   align-self: flex-end;
   position: sticky;
   right: 20px;
   left: 0;
-  font-size: 1.2rem;
+  font-size: 1.2rem; */
+  font-size: 20px;
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .advancebookinglinkback {
@@ -139,7 +188,7 @@
 
 .select_market {
   width: 100%;
-  min-height: 30vh;
+  /* min-height: 30vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -149,7 +198,8 @@
   /* display: flex; */
   justify-content: flex-start;
   align-items: center;
-  width: 100vw;
+  width: fit-content;
+  margin: auto;
 }
 
 .bookStall_btn {
@@ -281,6 +331,12 @@ input[type="number"] {
 input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 20px;
 }
+
+
+.advance-booking{
+  margin-top: 20px;
+}
+
 
 @media (max-width: 520px) {
   .Test {

@@ -63,6 +63,13 @@ const feedback = (message) => {
   });
 };
 
+
+const resetpassword = (password) => {
+  return axios.post(API_URL + "resetpassword", {
+    password
+  });
+};
+
 const AuthService = {
   register,
   login,
@@ -70,7 +77,8 @@ const AuthService = {
   getCurrentUser,
   addAddress,
   addimage,
-  feedback
+  feedback,
+  resetpassword
 };
 
 export default AuthService;
