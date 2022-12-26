@@ -35,12 +35,6 @@ exports.signup = async(req , res , next)=>{
       
         const data = await user.save()
         console.log(data);
-        // try {
-        //   const data = await user.save();
-        //   console.log(data);
-        // } catch (error) {
-        //   console.error(error);
-        // }
       
         if(!data){
           res.status(400).send("registration failed")
@@ -91,47 +85,6 @@ exports.signin = (req, res) => {
           pic:user.pic,
           address:user.address
         });
-      });
-  };
-  
-
-  exports.resetpassword = (req, res) => {
-    const {phone , password} = req.body
-    User.findOne({
-      phone: phone
-    })
-      .exec((err, user) => {
-        if (err) {
-          res.status(500).send({ message: err });
-          return;
-        }
-  
-        if (!user) {
-          return res.status(404).send({ message: "User Not found." });
-        }
-  
-        const newpassword =User.updateOne({
-          password:bcrypt.hashSync(password, 8),
-        })
-
-
-        const data =newpassword.save()
-        console.log(data);
-        // try {
-        //   const data = await user.save();
-        //   console.log(data);
-        // } catch (error) {
-        //   console.error(error);
-        // }
-      
-        if(!data){
-          res.status(400).send("registration failed")
-        }
-  
-        res.status(200).send(data)
-
-
-
       });
   };
 
@@ -185,36 +138,6 @@ exports.signin = (req, res) => {
   }
 
 
-  exports.resetPassword = async(req,res) => {
-    const {newpassword , phone} = req.body
-    try {
-      let token = req.headers["x-access-token"];
-      const { id } = jwt_decode(token)
-
-      if (!newpassword) {
-        res.json({
-          success: false,
-          message: "Please provide valid password"
-        });
-      } else {
-
-        const data = await User.find({_phone: phone})
-        if(data){
-          res.status(200).json(data)
-        }
-        else{
-          res.status(400).json("something went wrong")
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    res.status(500).send("Server Error");
-    }
-  }
-
-
-
-
 exports.feedback=async(req,res)=>{
   const {  message , stars} = req.body;
   const feedback = new Feedback({
@@ -224,26 +147,14 @@ exports.feedback=async(req,res)=>{
   const data = await feedback.save()
   res.status(200).send(feedback);
 }
- /* exports.feedback = async(req , res )=>{
-    
-      const {  message} = req.body;
-    
-      const feedback = new Feedback({
-        message
-      })
-      console.log(feedback);
-      const data = await feedback.save()
-      console.log(data);
-      // try {
-      //   const data = await user.save();
-      //   console.log(data);
-      // } catch (error) {
-      //   console.error(error);
-      // }
-    
-      if(!data){
-        res.status(400).send("feedback failed")
-      }
-      console.log(data);
-      res.status(200).send(data)
-}*/
+
+exports.newpassword = async(req,res) => {
+  const {phone , password} = req.body
+  const user = await User.findOne({
+      phone: phone,
+  });  
+  user.password = bcrypt.hashSync(password, 8),
+  await user.save();
+  res.status(200).send(user);
+
+}

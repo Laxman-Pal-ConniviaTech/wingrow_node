@@ -30,7 +30,7 @@ export default function NewPassword() {
     } else if (password.length < 6) {
       seterror("password must be greater than 6 characters");
     } else {
-      AuthService.resetpassword(data.phone, data.password).then(
+      AuthService.newpassword(data.phone, data.password).then(
         () => {
           toast.success("Reset Password successful!", {
             position: "top-center",

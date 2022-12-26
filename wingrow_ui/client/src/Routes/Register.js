@@ -118,9 +118,6 @@ export default function Register() {
             navigate("/registeration-successfull");
             window.location.reload();
           }, 1000);
-          // navigate('/login')
-          // setLoading(false)
-          // alert("Registration successful!")
         },
         (error) => {
           toast.warn("User Already Exists", {
