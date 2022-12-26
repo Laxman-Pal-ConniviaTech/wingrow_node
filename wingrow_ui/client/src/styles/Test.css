@@ -155,10 +155,10 @@
 }
 
 .advancebookinglinkback {
-  display: inline-flex;
-  align-self: flex-start;
-  position: sticky;
-  margin-bottom: 20px;
+  width: fit-content;
+  margin: 0 auto;
+  color: #000;
+  font-size: 15px;
 }
 
 .selected {
@@ -341,7 +341,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 @media (max-width: 520px) {
   .Test {
     margin-top: 0;
-  }
+    margin-bottom: 60px;
+}
   .market-name {
     font-size: 20px;
   }
@@ -374,4 +375,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 15px;
   }
+}
+
+
+.secondary_container_stalls{
+  margin-top: 20px;
 }

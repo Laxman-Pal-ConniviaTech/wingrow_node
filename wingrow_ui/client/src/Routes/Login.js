@@ -204,10 +204,10 @@ export default function SignIn() {
             >
               Login
             </Button>
-            <Typography mt={2}>
-              New to Wingrow?
-              <Link to="/Register" variant="body2" className="form-link">
-                Signup with us
+            <Typography className="form-link" mt={2}>
+              New to Wingrow? 
+               <Link to="/Register" variant="body2" className="form-link signupWithUs">
+                 Signup with us
               </Link>
             </Typography>
           </form>

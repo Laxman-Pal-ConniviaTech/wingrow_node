@@ -476,7 +476,7 @@ margin-top: 15px;
   }
 
   .links_farmersdata {
-    font-size: 1.2rem;
+    font-size: 10px;
   }
 }
 
@@ -520,6 +520,10 @@ sup {
   background: linear-gradient(105.42deg, #3AA54B 33.61%, #107C55 80.31%);
 }
 
+.select-market-grid{
+  padding-top: 45px !important;
+}
+
 @media (max-width: 550px) {
   .main {
     border: none;
@@ -540,4 +544,19 @@ sup {
   sup {
     font-size: 12px;
   }
+
+  .farmers_navigate{
+    padding: 0 !important;
+  }
+  .links_farmersdata {
+    margin: 5px;
+    padding: 10px 15px;
+}
+.select-market-grid{
+  padding-top: 20px !important;
+}
+
+.textfield{
+  border-radius: 30px !important;
+}
 }

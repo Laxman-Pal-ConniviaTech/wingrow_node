@@ -146,20 +146,6 @@ export default function Register() {
             navigate("/login");
             window.location.reload();
           }, 1000);
-          // setTags([])
-          // setLoading(false)
-          // alert("Registration failed")
-          // setData({
-          //   phone:'',
-          //   password:'',
-          //   firstname:'',
-          //   lastname:'',
-          //   type:'',
-          //   farmertype:"",
-          //   address:""
-          // })
-          // setTags([])
-          // setLoading(false)
         }
       );
     }
@@ -429,7 +415,7 @@ export default function Register() {
             <Button
               type="submit"
               fullWidth
-              className="form-btn"
+              className="signup-btn"
               variant="contained"
               color="success"
               size="large"
@@ -440,7 +426,7 @@ export default function Register() {
             <Grid container justifyContent="center">
               <Grid item>
                 <Link className="form-link" to="/login" variant="body2">
-                  Already have an account? Log In
+                  Already have an account? <span className="login">Log In</span>
                 </Link>
               </Grid>
             </Grid>
