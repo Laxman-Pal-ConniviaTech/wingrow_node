@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState} from 'react';
 import { Link } from "react-router-dom";
 import "./Customer.css";
 // Added
@@ -7,8 +7,14 @@ import ProductCategory from "./ProductCategory";
 import OffersCarousel from "./OffersCarousel";
 import BannerCarousel from "./BannerCarousel";
 import Feedback from "./Feedback";
+import ViewOffers from "../../components/ViewOffers"
 
 const CustomersLandingpage = () => {
+  const [open, setOpen] = useState()
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="customers_landing_page">
 
@@ -25,7 +31,7 @@ const CustomersLandingpage = () => {
           <h5>Market Name</h5>
           <p>00:00 am - 00:00 pm</p>
           <div className="btn-holder">
-            <button className="btn">View Offers</button>
+            <ViewOffers handleClose={handleClose} handleOpen={handleOpen} open={open}/>
             <button className="btn">Get Direction</button>
           </div>
         </div>
@@ -34,7 +40,7 @@ const CustomersLandingpage = () => {
           <h5>Market Name</h5>
           <p>00:00 am - 00:00 pm</p>
           <div className="btn-holder">
-            <button className="btn">View Offers</button>
+          <ViewOffers handleClose={handleClose} handleOpen={handleOpen} open={open}/>
             <button className="btn">Get Direction</button>
           </div>
         </div>
@@ -43,7 +49,7 @@ const CustomersLandingpage = () => {
           <h5>Market Name</h5>
           <p>00:00 am - 00:00 pm</p>
           <div className="btn-holder">
-            <button className="btn">View Offers</button>
+          <ViewOffers handleClose={handleClose} handleOpen={handleOpen} open={open}/>
             <button className="btn">Get Direction</button>
           </div>
         </div>

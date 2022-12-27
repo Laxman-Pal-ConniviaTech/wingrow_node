@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../styles/Farmer.css";
 import FarmerService from "../../services/farmer.service";
 import Spinner from "../../components/Spinner";
+import BarGraph from "./BarGraph";
 
 const FarmersHome = () => {
   const [InwardData, setInwardData] = useState();
@@ -18,10 +19,13 @@ const FarmersHome = () => {
   }, []);
 
   return (
-    <div className="farmers_page">
-    <div className="graph">
-      
-    </div>
+
+    <div>
+        <div className="graph">
+      <BarGraph/>
+      </div>
+      <div className="farmers_page">
+
       {InwardData && OutwardData && (
         <div className="farmers_data">
           {InwardData.length !== 0 && (
@@ -81,6 +85,8 @@ const FarmersHome = () => {
       )}
       {!InwardData && !OutwardData && <Spinner />}
     </div>
+    </div>
+    
   );
 };
 

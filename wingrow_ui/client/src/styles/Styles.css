@@ -565,7 +565,7 @@ li {
   }
 
   .authbox {
-    width: 90vw;
+    width: 100%;
     height: 80vh;
     display: flex;
     justify-content: flex-start;
@@ -676,6 +676,14 @@ li {
 
 .form-heading {
   margin: auto !important;
+}
+
+label{
+   font-size: 13px !important;
+}
+
+input {
+  font-size: 15px !important;
 }
 
 
@@ -813,7 +821,76 @@ margin: 15px auto !important;
   border-radius: 40px;
 }
 
+.bar-graph{
+  width: 60%;
+  margin: auto;
+  height: 50%;
+}
+
+.offers_modal_component{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.offer-box{
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid rgba(58, 165, 75, 1);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.offer-box p {
+  font-size: 20px;
+    font-weight: 700;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+    margin: 5px;
+} 
+
+.offer-box div{
+  display: flex;
+    justify-content: space-between;
+}
+
+.offer-box h6:nth-child(1){
+  border-right: 1px solid grey ;
+}
+
+.offer-box h6{
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+  padding: 5px 24px 0 0;
+  margin: 5px;
+}
+
+.offer-box h6 span {
+  display: block;
+    padding: 10px 0 0;
+}
+
 @media (max-width: 520px) {
+
+  .offer-box {
+    padding: 5px;
+    margin: 5px;
+}
+.offer-box p {
+  font-size: 13px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.offer-box h6 {
+  font-size: 15px;
+  padding: 5px 5px 0 0;
+  margin: 5px;
+}
   .forgot-main-container {
     height: 92vh;
 }

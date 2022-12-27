@@ -524,6 +524,10 @@ sup {
   padding-top: 45px !important;
 }
 
+.btn-holder{
+  display: flex;
+}
+
 @media (max-width: 550px) {
   .main {
     border: none;
