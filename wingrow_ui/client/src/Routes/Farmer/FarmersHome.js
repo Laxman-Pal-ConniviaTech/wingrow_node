@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "../../styles/Farmer.css";
 import FarmerService from "../../services/farmer.service";
 import Spinner from "../../components/Spinner";
-import BarGraph from "./BarGraph";
 
 const FarmersHome = () => {
   const [InwardData, setInwardData] = useState();
@@ -15,16 +14,31 @@ const FarmersHome = () => {
 
     FarmerService.getOutward().then((res) => {
       setOutwardData(res.data);
+      // console.log(res.data)
     });
   }, []);
 
+  // const getInward = (InwardData) => {
+  //   let sum = 0
+  //   for (let i = 0; i < InwardData.length; i++) {
+  //     sum += InwardData[i].purchase_quantity
+  //   }
+  //   return sum / InwardData.length
+  // }
+
+  // console.log(getInward())
   return (
 
-    <div>
-        <div className="graph">
-      <BarGraph/>
-      </div>
-      <div className="farmers_page">
+
+
+    <>
+
+<div className="inOutData">
+
+</div>
+
+        <div className="farmers_page">
+      
 
       {InwardData && OutwardData && (
         <div className="farmers_data">
@@ -85,7 +99,8 @@ const FarmersHome = () => {
       )}
       {!InwardData && !OutwardData && <Spinner />}
     </div>
-    </div>
+    </>
+
     
   );
 };

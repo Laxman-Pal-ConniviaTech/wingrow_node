@@ -603,3 +603,32 @@ class App extends React.Component {
   }
 }
 export default App
+
+
+
+    useEffect(()=>{
+      const fetchData = async()=>{
+  FarmerService.getInward().then((res)=>{
+    const data1 = res
+    return res
+  })
+        const fardata = FarmerService.getInward()
+        await fetch(fardata).then((data)=>{
+          console.log("farmers    " + data)
+          const res = data.json()
+          return res
+        }).catch(e =>{
+          console.log("err   " + e)
+        })
+      }
+      fetchData()
+    },[])
+
+
+    ,
+              {
+                label: "Outward",
+                data: [1, 2, 3, 4, 5],
+                borderWidth: 0,
+                backgroundColor: "#AACE48",
+              },
